@@ -7,7 +7,7 @@ class Bike {
             this.w = 60;
             this.h = this.w / imgRatio;
             this.x = 250;
-            this.y = 550;
+            this.y = 450;
         }
         img.src="./images/bike.png";
     }
@@ -20,9 +20,9 @@ class Bike {
 
 
     moveLeft() {
-    this.x += -20;
+    this.x += -50;
   }
   moveRight() {
-    this.x += 20;
+    this.x += 50;
   }
 }

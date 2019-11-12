@@ -20,11 +20,11 @@
 
  const voitureimgRatio = voitureimg.naturalWidth/voitureimg.naturalHeight;
 
-        this.w = 120; 
-        this.h = 200;
+        this.w = 100; 
+        this.h = 180;
   
-        this.x = 0;
-        this.y = -this.h;
+        this.x = 50;
+        this.y = 680//-this.h;
         }
     voitureimg.src="./images/voiture.png";
 }
@@ -35,12 +35,12 @@
     
     }
     hits(bike) {
-        return (
-
-          (bike.x+bike.w >= this.x && bike.x <= this.x+this.w) 
-          &&
-          (bike.y <= this.y+this.h && bike.y+bike.h >= this.y)
-        );
+      return (
+        (bike.x+bike.w >= this.x && bike.x <= this.x+this.w) 
+        &&
+        (bike.y <= this.y+this.h && bike.y+bike.h >= this.y)
+      );
+    }
   
   }
 
@@ -56,7 +56,7 @@
    \_/   (_______)\_______/   )_(   (_______)|/   \__/(_______/  |/ \___/ (_______/(_______/(_______)(_______/
                                                                                                               
     */
-   }
+
 
   class VoitureBleue {
 
@@ -69,11 +69,11 @@
 
         const voitureBleueimgRatio = voitureBleueimg.naturalWidth/voitureBleueimg.naturalHeight;
 
-        this.w = 200; 
-        this.h = 200;
+        this.w = 100; 
+        this.h = 180;
   
-        this.x = 50;
-        this.y = -this.h;
+        this.x = 150;
+        this.y = 680//-this.h;
         }
     voitureBleueimg.src="./images/voitureBleue.png";
 }
@@ -85,10 +85,12 @@
     }
   
     hits(bike) {
-        return (bike.x+bike.w >= this.x && bike.x <= this.x+this.w) 
-          &&
-          (bike.y <= this.y+this.h && bike.y+bike.h >= this.y);
-  }
+      return (
+        (bike.x+bike.w >= this.x && bike.x <= this.x+this.w) 
+        &&
+        (bike.y <= this.y+this.h && bike.y+bike.h >= this.y)
+      );
+    }
   }
 /*
   _______           _______ 
@@ -100,7 +102,6 @@
   | )   ( || (___) || ) \ \__
   |/     \|(_______)|/   \__/
                            
-  */
 
   class Mur {
     constructor() {
@@ -117,17 +118,4 @@
     }
   }
 
-/*
-  _______  _______  _______ _________ _______  _          _       _________          _______  _______ _________ _______  _______  _       
-  (  ____ \(  ___  )(       )\__   __/(  ___  )( (    /|  ( \      \__   __/|\     /|(  ____ )(  ___  )\__   __/(  ____ \(  ___  )( (    /|
-  | (    \/| (   ) || () () |   ) (   | (   ) ||  \  ( |  | (         ) (   | )   ( || (    )|| (   ) |   ) (   | (    \/| (   ) ||  \  ( |
-  | |      | (___) || || || |   | |   | |   | ||   \ | |  | |         | |   | |   | || (____)|| (___) |   | |   | (_____ | |   | ||   \ | |
-  | |      |  ___  || |(_)| |   | |   | |   | || (\ \) |  | |         | |   ( (   ) )|     __)|  ___  |   | |   (_____  )| |   | || (\ \) |
-  | |      | (   ) || |   | |   | |   | |   | || | \   |  | |         | |    \ \_/ / | (\ (   | (   ) |   | |         ) || |   | || | \   |
-  | (____/\| )   ( || )   ( |___) (___| (___) || )  \  |  | (____/\___) (___  \   /  | ) \ \__| )   ( |___) (___/\____) || (___) || )  \  |
-  (_______/|/     \||/     \|\_______/(_______)|/    )_)  (_______/\_______/   \_/   |/   \__/|/     \|\_______/\_______)(_______)|/    )_)
-                                                                                                                                           
   */
-
-
- 

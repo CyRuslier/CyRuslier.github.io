@@ -8,13 +8,13 @@ class Cap {
 
         const capImgRatio = capImg.naturalWidth/capImg.naturalHeight;
 
-        this.w = 130; 
-        this.h = 200;
+        this.w = 70; 
+        this.h = 60;
   
-        this.x = 170;
+        this.x = 0;
         this.y = -this.h;
         }
-        capImg.src="./images/casquette.png";
+        capImg.src="./images/casquette1.png";
 }
     
     draw() {

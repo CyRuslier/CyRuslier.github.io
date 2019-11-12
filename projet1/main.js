@@ -2,7 +2,6 @@ let bike;
 let bouteilles = [];
 let voitures = [];
 let voitureBleues = [];
-let murs = [];
 let caps = [];
 
 const ctx = document.querySelector('#game-board canvas').getContext('2d');
@@ -53,17 +52,17 @@ ctx.beginPath();
   }
 
   bouteilles.forEach(function (bouteille) {
-    bouteille.y += 5;
+    bouteille.y += 6;
     bouteille.draw();
   });
 
-  if (frames % 80 ===0){
+  if (frames % 120 ===0){
     var voiture = new Voiture();
     voitures.push(voiture);
   }
   console.log('voitures', voitures);
   voitures.forEach(function (voiture) {
-    voiture.y += 5;
+    voiture.y -= 5;
     voiture.draw();
   });
 
@@ -72,25 +71,17 @@ ctx.beginPath();
     voitureBleues.push(voitureBleue);
   }
   voitureBleues.forEach(function (voitureBleue) {
-    voitureBleue.y += 5;
+    voitureBleue.y -= 4;
     voitureBleue.draw();
   });
 
-  if (frames % 10 ===0){
-    var mur = new Mur();
-    murs.push(mur);
-  }
-  murs.forEach(function (mur) {
-    mur.y += 5;
-    mur.draw();
-  });
 
   if (frames % 500 ===0){
     var cap = new Cap();
     caps.push(cap);
   }
   caps.forEach(function (cap) {
-    cap.y += 7;
+    cap.y += 1;
     cap.draw();
   });
 
@@ -119,7 +110,7 @@ ctx.beginPath();
 
 
   for (voitureBleue of voitureBleues) {
-    if (voiture.hits(bike)) {
+    if (voitureBleue.hits(bike)) {
       console.log('crashed');
       gameover = true;
     }
@@ -143,7 +134,6 @@ ctx.beginPath();
   ctx.fillText(`${points} pts`, W-50, 100);
   ctx.fillStyle = "blue";
   points++;
-
 
 }
 
@@ -174,6 +164,18 @@ function animLoop() {
   if (!gameover) {
     raf = requestAnimationFrame(animLoop);
 }
+if (gameover) {
+let $btn = document.querySelector("#start-button");
+$btn.innerHTML = "PERDU 😫 ";
+$btn.disabled = true;
+$btn.style.backgroundColor = "red";
+$btn.style.color = "black";
+
+$btn.addEventListener("click", function(){
+  location = "https://cnn.com";
+});
+
+}
 }
 
 
@@ -189,7 +191,6 @@ function startGame() {
     bouteilles = [];
     voitures = [];
     voitureBleues = [];
-    murs = [];
     caps = [];
     raf = requestAnimationFrame(animLoop);
     
