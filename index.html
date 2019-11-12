@@ -1,21 +1,28 @@
-<head> <h1>Bienvenue sur mon site ! </h1>
-
-<h2> Cheat sheets </h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-
-
-
-  <ol>
-    <li><a href="https://hackmd.io/zpC_bjgCRe68MX6V3F4LbA"> JavaScript </a>
- <br>
-    <li><a href="https://hackmd.io/FSzTJ7GzQPOT8kx5wjjcGQ"> HTML </a>
-  <br>
-    <li><a href="https://hackmd.io/jCrfnvYpR9GUQMli5RTYJA"> CSS </a>
-  </ol>
+  <div class="game-intro">
+    <img src="./images/logo.gif" alt="" class="logo-img">
     <br>
-    <li><a href="CyRuslier.github.io/index.html/projet1/"> Mon jeu </a>
-  </ol>
+    <button id="start-button">Pédale!</button>
+    <p>Esquive les obstacles sur la piste cyclable!</p>
 
+  </div>
+  <div id="game-board">
+    <canvas id="canvas" width="600" height="680">
+    </canvas>
+  </div>
+
+  <script src="bike.js"></script>
+  <script src="obstacles.js"></script>
+  <script src="main.js"></script>
+  <script src="decor.js"></script>
+  <script src="win.js"></script>
 </body>
+</html>
+
