@@ -18,7 +18,7 @@ function random(from, to) {
         this.x = random(200, 400);
         this.y = -this.h;
     }
-    bouteilleimg.src="./images/bottle.png";
+    bouteilleimg.src="./images/bottle1.png";
 }
     
 
